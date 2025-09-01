@@ -1,0 +1,16 @@
+{
+  "id": "chatcmpl-xyz123",
+  "object": "chat.completion",
+  "created": 1699999999,
+  "model": "cognitivecomputations/dolphin-mistral-24b-venice-edition:free",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "Hi there! How can I help you?"
+      },
+      "finish_reason": "stop"
+    }
+  ]
+}
