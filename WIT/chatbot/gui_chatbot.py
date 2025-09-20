@@ -6,7 +6,7 @@ from kivy.uix.button import Button
 from kivy.uix.label import Label
 
 # 🔑 Your OpenRouter API key here
-API_KEY = "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"
+API_KEY = "paste here"          # paste your api key here
 URL = "https://openrouter.ai/api/v1/chat/completions"
 
 # 📝 Choose your model here (just edit this string)

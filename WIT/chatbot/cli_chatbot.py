@@ -1,6 +1,6 @@
 import requests
 
-API_KEY = "abcd"
+API_KEY = "API-KEY"     #PASTE YOUR API KEY HERE
 URL = "https://openrouter.ai/api/v1/chat/completions"
 
 MODEL = "google/gemini-2.5-flash-image-preview:free"
