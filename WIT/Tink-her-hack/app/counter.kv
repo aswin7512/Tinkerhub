@@ -1,0 +1,32 @@
+# 1. We reference the class name from Python using < >
+<CounterLayout>:
+    # 2. Set the layout orientation
+    orientation: 'vertical'
+    
+    # Add some padding (space around the edge) and spacing (space between items)
+    padding: 50
+    spacing: 20
+
+    # 3. Define the Label
+    Label:
+        # We bind the text to the property we created in Python
+        text: root.number_text
+        font_size: '100sp'
+        color: 1, 0.5, 0, 1  # RGBA: Orange color
+
+    # 4. Define the Buttons inside a nested layout for side-by-side positioning
+    BoxLayout:
+        orientation: 'horizontal'
+        spacing: 10
+        size_hint_y: 0.4  # Take up only 30% of the vertical height
+
+        Button:
+            text: "Minus (-)"
+            background_color: 1, 0, 0, 1 # Red
+            # Call the function from the root class (CounterLayout)
+            on_press: root.decrease_number()
+
+        Button:
+            text: "Plus (+)"
+            background_color: 0, 1, 0, 1 # Green
+            on_press: root.increase_number()
