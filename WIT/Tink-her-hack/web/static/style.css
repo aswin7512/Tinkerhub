@@ -1,0 +1,78 @@
+/* 1. Global Reset: Makes sizing easier to understand */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* 2. Body Styling: Centering the card on the screen */
+body {
+    background-color: #f0f2f5; /* Light gray background */
+    font-family: 'Times New Roman', sans-serif;
+    
+    /* Flexbox magic to center content perfectly */
+    display: flex;
+    justify-content: center; /* Horizontal Center */
+    align-items: center;     /* Vertical Center */
+    height: 100vh;           /* Full Viewport Height */
+}
+
+/* 3. The Card: Explaining the Box Model here */
+.card {
+    background-color: white;
+    width: 300px;
+    padding: 20px;          /* Space INSIDE the card */
+    border-radius: 15px;    /* Rounded corners */
+    text-align: center;     /* Centers text inside the card */
+    
+    /* A subtle shadow makes it "pop" off the screen */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1); 
+}
+
+/* 4. The Image: Making it circular */
+.profile-img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;     /* Makes a square image a circle */
+    border: 3px solid #3b82f6; /* Blue border ring */
+    object-fit: cover;      /* Ensures image doesn't stretch */
+    margin-bottom: 15px;
+}
+
+/* 5. Typography */
+.name {
+    color: #333;
+    font-size: 1.5rem;
+    margin-bottom: 5px;
+}
+
+.role {
+    color: #3b82f6; /* Blue accent color */
+    font-weight: bold;
+    font-size: 0.9rem;
+    margin-bottom: 15px;
+}
+
+.bio {
+    color: #666;
+    font-size: 0.9rem;
+    line-height: 1.4;
+    margin-bottom: 20px;
+}
+
+/* 6. The Button: Interactivity */
+.btn {
+    background-color: #3b82f6;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 20px;
+    font-size: 1rem;
+    cursor: pointer; /* Changes mouse cursor to hand */
+    transition: background-color 0.3s; /* Smooth animation */
+}
+
+/* Hover State: What happens when mouse goes over button */
+.btn:hover {
+    background-color: #2563eb; /* Darker blue */
+}

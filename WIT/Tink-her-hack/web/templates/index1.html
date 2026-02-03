@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FlexBox Profile Card</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+
+    <div class="card">
+        <img 
+            src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?auto=format&fit=crop&w=200&h=200" 
+            alt="Profile Picture of Alex" 
+            class="profile-img"
+        >
+        
+        <h2 class="name">Alex Developer</h2>
+        <p class="role">Frontend Enthusiast</p>
+        <p class="bio">I love building beautiful interfaces and teaching others how to code. Coffee addict ☕.</p>
+        
+        <a class="btn" href="/{{id}}">Follow Me</a>
+        
+        <form method="POST">
+        
+        <label>Username:</label>
+        <input type="text" name="username" required>
+        <br><br>
+        
+        <label>Password:</label>
+        <input type="password" name="password" required>
+        <br><br>
+        
+        <button type="submit">Login</button>
+        
+    </form>
+    </div>
+
+</body>
+</html>
