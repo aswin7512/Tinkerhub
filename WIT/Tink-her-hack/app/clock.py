@@ -1,24 +1,37 @@
 from kivy.app import App
-from kivy.uix.label import Label
 from kivy.clock import Clock
 import time
+from kivy.uix.boxlayout import BoxLayout
+from kivy.properties import StringProperty
 
-class ClockApp(App):
-    def build(self):
-        # 1. Create the Label
-        self.my_label = Label(text="Starting...", font_size='50sp')
-        
-        # 2. Schedule the update function to run every 1 second
-        Clock.schedule_interval(self.update_time, 1)
-        
-        return self.my_label
-
+class ClockLayout(BoxLayout):
+    my_label = StringProperty("Start??")
+    day_date = StringProperty("")
+    event = None
+    
     # This function is called every second by the Clock
     def update_time(self, dt):
-        # Get current time string
-        current_time = time.strftime("%H:%M:%S")
-        # Update the label text
-        self.my_label.text = current_time
+        self.day_date = str(time.strftime("%Y-%m-%d %A"))
+        self.my_label = str(time.strftime("%H:%M:%S"))
+    
+
+    def stop_time(self):
+        self.event.cancel()
+        self.event = None
+        self.my_label = "Start??"
+        self.day_date = ""
+    
+    
+    def start_time(self):
+        if not self.event:
+            self.event = Clock.schedule_interval(self.update_time, 1)
+
+
+class ClockApp(App):
+    def build(self):        
+        return ClockLayout()
+
+    
 
 if __name__ == '__main__':
     ClockApp().run()

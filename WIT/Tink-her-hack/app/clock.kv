@@ -1,0 +1,38 @@
+# 1. We reference the class name from Python using < >
+<ClockLayout>:
+    # 2. Set the layout orientation
+    orientation: 'vertical'
+    
+    # Add some padding (space around the edge) and spacing (space between items)
+    padding: 50
+    spacing: 20
+
+    # 3. Define the Label
+    Label:
+        text: root.day_date
+        font_size: "50sp"
+        text_size: self.size
+        halign: 'left'
+
+    Label:
+        # We bind the text to the property we created in Python
+        text: root.my_label
+        font_size: '100sp'
+        color: 1, 0.5, 0, 1  # RGBA: Orange color
+
+    # # 4. Define the Buttons inside a nested layout for side-by-side positioning
+    BoxLayout:
+        orientation: 'horizontal'
+        spacing: 10
+        size_hint_y: 0.3  # Take up only 30% of the vertical height
+
+        Button:
+            text: "Stop"
+            background_color: 1, 0, 0, 1 # Red
+            # Call the function from the root class (CounterLayout)
+            on_press: root.stop_time()
+
+        Button:
+            text: "Start"
+            background_color: 0, 1, 0, 1 # Green
+            on_press: root.start_time()
